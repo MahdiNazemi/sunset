@@ -76,7 +76,11 @@ let s:PI = 3.14159265359
 let s:ZENITH = 90
 let s:SUNRISE = 1
 let s:SUNSET = 0
-let s:CIVIL_TWILIGHT_DURATION = 30
+if !exists('g:civil_twilight_duration')
+  let s:CIVIL_TWILIGHT_DURATION = 30
+else
+  let s:CIVIL_TWILIGHT_DURATION = g:civil_twilight_duration
+endif
 lockvar s:PI
 lockvar s:ZENITH
 lockvar s:SUNRISE
