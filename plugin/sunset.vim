@@ -232,6 +232,6 @@ let s:SUNRISE_TIME = s:calculate(s:SUNRISE)
 let s:SUNSET_TIME = s:calculate(s:SUNSET)
 call s:sunset()
 
-autocmd CursorHold * nested call s:sunset()
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * nested call s:sunset()
 
 call s:restore_cpoptions()
